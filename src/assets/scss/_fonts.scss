@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'nexa-bold';
+  src: url('~@/assets/fonts/bold/nexa-bold.woff2') format('woff2'),
+  url('~@/assets/fonts/bold/nexa-bold.woff') format('woff'),
+  url('~@/assets/fonts/bold/nexa-bold.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'nexa-light';
+  src: url('~@/assets/fonts/light/nexa-light.woff2') format('woff2'),
+  url('~@/assets/fonts/light/nexa-light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
