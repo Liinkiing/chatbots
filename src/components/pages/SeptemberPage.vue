@@ -1,5 +1,5 @@
 <template>
-  <page-component :title="'September'">
+  <page-component :title="'sept.'">
   </page-component>
 </template>
 

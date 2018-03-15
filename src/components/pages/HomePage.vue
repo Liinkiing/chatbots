@@ -16,8 +16,10 @@ export default {
 <style lang="scss">
   .home-page {
     h2 {
+      margin-top: -3rem;
+      margin-left: 0.3rem;
       text-align: left;
-      @include fontSize(12);
+      @include fontSize(20);
     }
   }
 </style>
