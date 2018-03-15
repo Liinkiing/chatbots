@@ -1,6 +1,9 @@
 <template>
-  <div class="hello">
-    <h1>Chatbots</h1>
+  <div class="home-page page">
+    <div class="page__title">
+      <h1 class="bold">chatbots</h1>
+      <h2>technological watch from september 2017 to march 2018</h2>
+    </div>
   </div>
 </template>
 
@@ -10,19 +13,11 @@ export default {
 }
 </script>
 
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+<style lang="scss">
+  .home-page {
+    h2 {
+      text-align: left;
+      @include fontSize(12);
+    }
+  }
 </style>
