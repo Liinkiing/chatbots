@@ -1,7 +1,9 @@
 @import "colors";
 @import "fonts";
 @import "mixins";
+@import "transitions";
 @import "utils";
+@import "variables";
 
 body {
   margin: 0 auto;
@@ -14,6 +16,10 @@ body {
 }
 
 .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $page-padding;
   width: 100vw;
   height: 100vh;
   color: $white;
@@ -24,10 +30,26 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
     @include fontSize(100);
 
     h1 {
       margin: 0;
+    }
+  }
+
+  &__line {
+    position: absolute;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      width: calc(100% - (#{$page-padding} * 2));
+      height: 0.2rem;
+      background-color: $white;
     }
   }
 }
