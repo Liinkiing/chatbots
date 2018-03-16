@@ -1,7 +1,9 @@
 @import "colors";
 @import "fonts";
 @import "mixins";
+@import "transitions";
 @import "utils";
+@import "variables";
 
 body {
   margin: 0 auto;
@@ -14,7 +16,10 @@ body {
 }
 
 .page {
-  padding: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $page-padding;
   width: 100vw;
   height: 100vh;
   color: $white;
@@ -34,7 +39,7 @@ body {
   }
 
   &__line {
-    position: relative;
+    position: absolute;
 
     &::before {
       content: '';
@@ -42,7 +47,7 @@ body {
       top: 50%;
       left: 50%;
       transform: translate(-50%, 50%);
-      width: 100%;
+      width: calc(100% - (#{$page-padding} * 2));
       height: 0.2rem;
       background-color: $white;
     }
