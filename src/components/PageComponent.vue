@@ -60,6 +60,7 @@ export default {
   .page__content {
     height: 70vh;
     width: 80vw;
+    max-width: 700px;
   }
 
   .arrow {

@@ -1,6 +1,12 @@
 <template>
   <page-component :title="'sept.'">
-    <p>September content</p>
+      <h2 class="bold">Chatbots: revolution or regression regarding UX design?</h2>
+      <p>
+        When not used as a communication blow, the chatbot can really be relevant when it has a useful approach to the
+        design service
+        and is though to the long term
+      </p>
+    <a class="page__source" href="http://www.angie.fr/chatbots-revolution-regression-matiere-dux/v">http://www.angie.fr/chatbots-revolution-regression-matiere-dux/v</a>
   </page-component>
 </template>
 
@@ -16,5 +22,4 @@ export default {
 </script>
 
 <style lang="scss">
-  @import "../../assets/scss/colors";
 </style>
