@@ -4,11 +4,13 @@
       <h1 class="bold">{{title}}</h1>
     </div>
 
+    <div class="content__fade" v-if="showContent">s</div>
     <transition name="fade">
       <div class="page__content" v-if="showContent">
         <slot></slot>
       </div>
     </transition>
+    <div class="content__fade" v-if="showContent"></div>
 
     <img src="../assets/img/general/arrow.svg" class="arrow" :class="animate ? 'arrow-focus' : ''" alt="Arrow" @click="toggleContent()">
   </div>
@@ -60,7 +62,8 @@ export default {
   .page__content {
     height: 70vh;
     width: 80vw;
-    max-width: 700px;
+    max-width: 840px;
+    padding: $page-padding;
   }
 
   .arrow {

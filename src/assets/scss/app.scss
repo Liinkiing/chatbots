@@ -21,6 +21,7 @@ p, a {
 
 .page {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: $page-padding;
@@ -28,6 +29,21 @@ p, a {
   height: 100vh;
   color: $white;
   background-color: $main-color;
+
+  & .content__fade {
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
+    background-image: linear-gradient(to bottom, $main-color, transparentize($main-color, 1) 90%);
+    width: 100vw;
+    top: 59px;
+    height: 60px;
+    &:last-of-type {
+      background-image: linear-gradient(to bottom, transparentize($main-color, 1), $main-color 90%);
+      position: relative;
+      top: -59px;
+    }
+  }
 
   &__title {
     position: absolute;
@@ -43,9 +59,21 @@ p, a {
   }
 
   &__content {
-    display: flex;
+    overflow-y: scroll;
+    position: relative;
     flex-direction: column;
     justify-content: center;
+    &::-webkit-scrollbar {
+      width: 0.25rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      display: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.22);
+    }
     & h2 {
       color: black;
       margin-bottom: 1.5rem;
