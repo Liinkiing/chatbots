@@ -38,12 +38,24 @@ p, a {
     pointer-events: none;
     background-image: linear-gradient(to bottom, $main-color, transparentize($main-color, 1) 90%);
     width: 100vw;
-    top: 59px;
+    top: 43px;
     height: 60px;
     &:last-of-type {
       background-image: linear-gradient(to bottom, transparentize($main-color, 1), $main-color 90%);
       position: relative;
-      top: -59px;
+      top: -43px;
+      @media screen and (min-height: 600px) {
+        top: -53px;
+      }
+      @media screen and (min-height: 782px) {
+        top: -59px;
+      }
+    }
+    @media screen and (min-height: 600px) {
+      top: 53px;
+    }
+    @media screen and (min-height: 782px) {
+      top: 59px;
     }
   }
 
