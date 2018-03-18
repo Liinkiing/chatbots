@@ -14,27 +14,42 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
+      name: 'home',
+      meta: {
+        date: new Date('2017-08-01')
+      },
       component: HomePage
     },
     {
       path: '/september',
-      name: 'SeptemberPage',
+      name: 'september',
+      meta: {
+        date: new Date('2017-09-01')
+      },
       component: SeptemberPage
     },
     {
       path: '/october',
-      name: 'OctoberPage',
+      name: 'october',
+      meta: {
+        date: new Date('2017-10-01')
+      },
       component: OctoberPage
     },
     {
       path: '/november',
-      name: 'NovemberPage',
+      name: 'november',
+      meta: {
+        date: new Date('2017-11-01')
+      },
       component: NovemberPage
     },
     {
       path: '/december',
-      name: 'DecemberPage',
+      name: 'december',
+      meta: {
+        date: new Date('2017-12-01')
+      },
       component: DecemberPage
     },
     {

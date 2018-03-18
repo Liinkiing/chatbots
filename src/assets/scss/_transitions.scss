@@ -9,3 +9,43 @@
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
+
+.slide-in-enter-active, .slide-in-enter-leave {
+  transition: transform 0.7s, opacity 1s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.slide-in-enter {
+  transform: translateX(100vw);
+  opacity: 0;
+}
+
+
+.slide-in-leave-active {
+  transform: translateX(-100vw);
+  opacity: 0;
+}
+
+.slide-out-enter-active, .slide-in-enter-leave {
+  transition: transform 0.7s, opacity 1s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.slide-out-enter {
+  transform: translateX(-100vw);
+  opacity: 0;
+}
+
+
+.slide-out-leave-active {
+  transform: translateX(100vw);
+  opacity: 0;
+}
