@@ -15,8 +15,13 @@ body {
   box-sizing: border-box;
 }
 
+p, a {
+  @include fontSize(12)
+}
+
 .page {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: $page-padding;
@@ -24,6 +29,21 @@ body {
   height: 100vh;
   color: $white;
   background-color: $main-color;
+
+  & .content__fade {
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
+    background-image: linear-gradient(to bottom, $main-color, transparentize($main-color, 1) 90%);
+    width: 100vw;
+    top: 59px;
+    height: 60px;
+    &:last-of-type {
+      background-image: linear-gradient(to bottom, transparentize($main-color, 1), $main-color 90%);
+      position: relative;
+      top: -59px;
+    }
+  }
 
   &__title {
     position: absolute;
@@ -35,6 +55,39 @@ body {
 
     h1 {
       margin: 0;
+    }
+  }
+
+  &__content {
+    overflow-y: scroll;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    &::-webkit-scrollbar {
+      width: 0.25rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      display: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.22);
+    }
+    & h2 {
+      color: black;
+      margin-bottom: 1.5rem;
+      @include fontSize(30);
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+    & p {
+      color: black;
+      margin-left: $content-margin;
+    }
+    & a.page__source {
+      margin-left: $content-margin;
     }
   }
 
