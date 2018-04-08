@@ -1,33 +1,44 @@
 <template>
   <div class="page">
-    <div class="page__title page__line" :class="animate ? 'page__title-focus' : ''" @click="toggleContent()">
+    <div class="page__title page__line" :class="className" @click="toggleContent()">
       <h1 class="bold">{{title}}</h1>
     </div>
 
-    <div class="content__fade" v-if="showContent">s</div>
+    <div class="content__fade" v-if="forceShow || showContent"></div>
     <transition name="fade">
-      <div class="page__content" v-if="showContent">
+      <div class="page__content" v-if="forceShow || showContent">
         <slot></slot>
       </div>
     </transition>
-    <div class="content__fade" v-if="showContent"></div>
+    <div class="content__fade" v-if="forceShow || showContent"></div>
 
-    <img src="../assets/img/general/arrow.svg" class="arrow" :class="animate ? 'arrow-focus' : ''" alt="Arrow" @click="toggleContent()">
+    <img v-if="!forceShow" src="../assets/img/general/arrow.svg" class="arrow" :class="animate ? 'arrow-focus' : ''" alt="Arrow" @click="toggleContent()">
   </div>
 </template>
 
 <script>
 export default {
   name: 'page-component',
-  props: ['title'],
+  props: {
+    title: {type: String, required: true},
+    forceShow: {type: Boolean, required: false, default: false}
+  },
   data () {
     return {
       animate: false,
       showContent: false
     }
   },
+  computed: {
+    className () {
+      return {
+        'page__title-focus': this.forceShow || this.animate
+      }
+    }
+  },
   methods: {
     toggleContent () {
+      if (this.forceShow) return
       if (!this.animate) {
         this.animate = !this.animate
 
