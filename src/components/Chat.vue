@@ -49,6 +49,10 @@
         position: relative;
         z-index: 2;
         margin-bottom: 40px;
+        width: max-content;
+        max-width: 100%;
+        float: right;
+        clear: both;
         & .actions {
           & .action {
             &:first-of-type {
@@ -91,6 +95,7 @@
           border-bottom-color: whitesmoke;
         }
         &.is-mine {
+          float: none;
           &:before, :after {
             content: "\0020";
             display: block;
@@ -117,6 +122,7 @@
         & p {
           margin: 0;
           color: inherit;
+          display: inline-block;
         }
       }
     }
