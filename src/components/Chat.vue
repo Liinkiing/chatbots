@@ -5,7 +5,7 @@
         <li class="message" v-for="message in messages" :key="message.id" :class="{'is-mine': message.isMine}">
           <p>
             {{ message.text }}
-            <img :src="message.attachment.url" v-if="message.attachment.type === 'image'" />
+            <img :src="message.attachment.url" v-if="message.attachment.type === 'image'"/>
             <video controls height="160" v-if="message.attachment.type === 'video'" autoplay="">
               <source :src="message.attachment.url" type="video/mp4">
             </video>
@@ -17,14 +17,15 @@
           <div class="actions" v-if="message.original.type === 'actions'">
             <div class="action" v-for="action in message.original.actions" :key="action.value"
                  @click="performAction(action.value, message.original)">
-              <img v-if="action.image_url" :src="action.image_url" style="max-height: 25px" />
+              <img v-if="action.image_url" :src="action.image_url" style="max-height: 25px"/>
               {{ action.text }}
             </div>
           </div>
         </li>
       </transition-group>
     </ul>
-    <input type="text" class="message-input" @keyup.enter="sendMessage" v-model="newMessage" placeholder="Entrez votre message...">
+    <input type="text" class="message-input" @keyup.enter="sendMessage" v-model="newMessage"
+           placeholder="Entrez votre message...">
   </div>
 </template>
 
@@ -67,49 +68,49 @@
         &:last-of-type {
           margin-bottom: 0;
         }
-        &:before,:after {
+        &:before, :after {
           content: "\0020";
-          display:block;
-          position:absolute;
-          z-index:2;
+          display: block;
+          position: absolute;
+          z-index: 2;
           width: 0;
           height: 0;
-          overflow:hidden;
+          overflow: hidden;
           border: solid 20px transparent;
           border-top: 0;
-          border-bottom-color:$main-color;
+          border-bottom-color: $main-color;
           top: calc(100% - 8px);
           right: -13px;
           transform: rotate(45deg);
         }
         &:before {
           top: calc(100% - 2px);
-          right: -15px ;
+          right: -15px;
           transform: rotate(45deg);
-          z-index:1;
+          z-index: 1;
           border-bottom-color: whitesmoke;
         }
         &.is-mine {
-          &:before,:after {
+          &:before, :after {
             content: "\0020";
-            display:block;
-            position:absolute;
-            z-index:2;
+            display: block;
+            position: absolute;
+            z-index: 2;
             width: 0;
             height: 0;
-            overflow:hidden;
+            overflow: hidden;
             border: solid 20px transparent;
             border-top: 0;
-            border-bottom-color:$main-color;
+            border-bottom-color: $main-color;
             top: calc(100% - 8px);
             left: -13px;
             transform: rotate(135deg) scaleY(-1);
           }
           &:before {
             top: calc(100% - 2px);
-            left: -15px ;
+            left: -15px;
             transform: rotate(135deg) scaleY(-1);
-            z-index:1;
+            z-index: 1;
             border-bottom-color: whitesmoke;
           }
         }
@@ -151,7 +152,21 @@ export default {
 
   data () {
     return {
-      messages: [],
+      messages: [
+        {
+          'isMine': false,
+          'user': '🤖',
+          'text': 'Salut ! Ici, tu peux parler avec moi si l\'envie te prends. Hésite pas à me dire coucou ! :)',
+          'id': 'intro',
+          'original': {
+            'type': 'text',
+            'text': 'Salut ! Ici, tu peux parler avec moi si l\'envie te prends. Hésite pas à me dire coucou ! :)',
+            'attachment': null,
+            'additionalParameters': []
+          },
+          'attachment': {}
+        }
+      ],
       newMessage: null
     }
   },
