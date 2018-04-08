@@ -58,18 +58,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .page__title {
-    z-index: 1;
-    width: 100%;
-    transition: all $transition-duration ease;
-    cursor: pointer;
-
-    &-focus {
-      top: 4rem;
-      @include fontSize(40);
-    }
-  }
-
   .page__content {
     height: 70vh;
     width: 80vw;

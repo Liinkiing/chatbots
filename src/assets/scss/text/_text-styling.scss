@@ -1,0 +1,15 @@
+h1, h2, h3 {
+  text-align: left;
+}
+
+h3 {
+  @include fontSize(16);
+}
+
+p, a {
+  @include fontSize(12)
+}
+
+.bold {
+  font-family: nexa-bold, sans-serif;
+}

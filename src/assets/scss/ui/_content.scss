@@ -1,0 +1,145 @@
+body {
+  margin: 0 auto;
+  font-size: 62.5%;
+  font-family: nexa-light, sans-serif;
+  background: $main-color;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: $page-padding;
+  width: 100vw;
+  height: 100vh;
+  color: $white;
+  text-align: justify;
+  background-color: $main-color;
+
+  & .content__fade {
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
+    background-image: linear-gradient(to bottom, $main-color, transparentize($main-color, 1) 90%);
+    width: 100vw;
+    top: 43px;
+    height: 60px;
+    &:last-of-type {
+      background-image: linear-gradient(to bottom, transparentize($main-color, 1), $main-color 90%);
+      position: relative;
+      top: -43px;
+      @media screen and (min-height: 600px) {
+        top: -53px;
+      }
+      @media screen and (min-height: 782px) {
+        top: -59px;
+      }
+    }
+    @media screen and (min-height: 600px) {
+      top: 53px;
+    }
+    @media screen and (min-height: 782px) {
+      top: 59px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 auto;
+    width: $container;
+
+    &-item {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      width: 47%;
+    }
+  }
+
+  &__small-container {
+    margin: 0 auto;
+    max-width: $small-container;
+  }
+
+  &__title {
+    z-index: 1;
+    width: 100%;
+    transition: all $transition-duration ease;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    @include fontSize(100);
+
+    &-focus {
+      top: 4rem;
+      @include fontSize(40);
+    }
+
+    h1 {
+      margin: 0;
+    }
+  }
+
+  &__content {
+    position: relative;
+    color: $black;
+    overflow-y: scroll;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    &::-webkit-scrollbar {
+      width: 0.25rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      display: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.22);
+    }
+    & h2 {
+      color: black;
+      margin-bottom: 1.5rem;
+      @include fontSize(30);
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+    & p {
+      color: black;
+      margin-left: $content-margin;
+    }
+    & a.page__source {
+      margin-left: $content-margin;
+    }
+  }
+
+  &__line {
+    position: absolute;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      width: calc(100% - (#{$page-padding} * 2));
+      height: 0.2rem;
+      background-color: $white;
+    }
+  }
+}

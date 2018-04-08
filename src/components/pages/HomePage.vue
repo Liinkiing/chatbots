@@ -8,9 +8,10 @@
 </template>
 
 <script>
-export default {
-  name: 'home-page'
-}
+  export default {
+    name: 'home-page'
+  }
+
 </script>
 
 <style lang="scss">
@@ -22,4 +23,5 @@ export default {
       @include fontSize(20);
     }
   }
+
 </style>
