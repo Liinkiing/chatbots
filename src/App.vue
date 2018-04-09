@@ -14,7 +14,9 @@
       <router-view/>
     </transition>
 
-    <timeline-component/>
+    <transition name="timeline">
+      <timeline-component/>
+    </transition>
   </div>
 </template>
 
@@ -92,4 +94,5 @@ export default {
 </script>
 
 <style lang="scss">
+  @import "./assets/scss/ui/transitions/timeline";
 </style>
