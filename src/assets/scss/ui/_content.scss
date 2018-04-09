@@ -4,6 +4,10 @@ body {
   font-family: nexa-light, sans-serif;
   background: $main-color;
   overflow: hidden;
+  transition: background-color 1s;
+  &.chatbot {
+    background-color: $blue;
+  }
 }
 
 * {
@@ -20,7 +24,12 @@ body {
   height: 100vh;
   color: $white;
   text-align: justify;
-  background-color: $main-color;
+
+  &.chatbot {
+    & .content__fade {
+      display: none;
+    }
+  }
 
   & .content__fade {
     position: relative;

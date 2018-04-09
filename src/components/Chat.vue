@@ -34,6 +34,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    color: whitesmoke;
     & .chat-container {
       border: 2px solid whitesmoke;
       margin: 0;
@@ -51,8 +52,6 @@
         margin-bottom: 40px;
         width: max-content;
         max-width: 100%;
-        float: right;
-        clear: both;
         & .actions {
           & .action {
             &:first-of-type {
@@ -82,20 +81,20 @@
           overflow: hidden;
           border: solid 20px transparent;
           border-top: 0;
-          border-bottom-color: $main-color;
+          border-bottom-color: $blue;
           top: calc(100% - 8px);
-          right: -13px;
-          transform: rotate(45deg);
+          left: -13px;
+          transform: rotate(-45deg);
         }
         &:before {
           top: calc(100% - 2px);
-          right: -15px;
-          transform: rotate(45deg);
+          left: -15px;
+          transform: rotate(-45deg);
           z-index: 1;
           border-bottom-color: whitesmoke;
         }
         &.is-mine {
-          float: none;
+          margin-left: auto;
           &:before, :after {
             content: "\0020";
             display: block;
@@ -106,15 +105,17 @@
             overflow: hidden;
             border: solid 20px transparent;
             border-top: 0;
-            border-bottom-color: $main-color;
+            border-bottom-color: $blue;
             top: calc(100% - 8px);
-            left: -13px;
-            transform: rotate(135deg) scaleY(-1);
+            right: -13px;
+            left: unset;
+            transform: rotate(225deg) scaleY(-1);
           }
           &:before {
             top: calc(100% - 2px);
-            left: -15px;
-            transform: rotate(135deg) scaleY(-1);
+            right: -15px;
+            left: unset;
+            transform: rotate(225deg) scaleY(-1);
             z-index: 1;
             border-bottom-color: whitesmoke;
           }
