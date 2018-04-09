@@ -95,7 +95,6 @@
         </router-link>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -136,7 +135,7 @@ export default {
       p {
         margin-left: $content-margin;
       }
-  
+
       &-item {
         position: relative;
         display: flex;
@@ -220,7 +219,7 @@ export default {
             margin-left: 0;
           }
         }
-        
+
         .start-navigation {
           margin-top: 4rem;
         }
