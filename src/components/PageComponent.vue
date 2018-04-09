@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="page" :class="$router.currentRoute.name">
     <div class="page__title page__line" :class="className" @click="toggleContent()">
       <h1 class="bold">{{title}}</h1>
     </div>
@@ -21,7 +21,8 @@ export default {
   name: 'page-component',
   props: {
     title: {type: String, required: true},
-    forceShow: {type: Boolean, required: false, default: false}
+    forceShow: {type: Boolean, required: false, default: false},
+    showFaders: {type: Boolean, required: false, default: true}
   },
   data () {
     return {

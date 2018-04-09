@@ -1,5 +1,5 @@
 <template>
-  <page-component :title="'chatbot'" :force-show="true">
+  <page-component :title="'chatbot'" :force-show="true" :show-faders="false">
     <chat/>
   </page-component>
 </template>
@@ -12,6 +12,12 @@ export default {
   components: {
     Chat,
     PageComponent
+  },
+  mounted () {
+    document.querySelector('body').classList.add('chatbot')
+  },
+  beforeDestroy () {
+    document.querySelector('body').classList.remove('chatbot')
   }
 }
 </script>
