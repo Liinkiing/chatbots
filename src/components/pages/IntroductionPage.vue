@@ -35,25 +35,65 @@
       </div>
     </div>
 
-    <div class="page__container">
-      <div class="page__container-item">
+    <div class="introduction-page__container">
+      <div class="introduction-page__container-item">
         <img src="@/assets/img/introduction/how-section/illu-1.svg" alt="Illustration">
-        <h3>Scripted chatbots</h3>
+        <h3 class="bold">Scripted chatbots</h3>
         <p>Conversations with this type of chatbot can only follow predetermined paths. At each step in the conversation the user will need to pick from explicit options to determine the next step in the conversation.</p>
         <p>Conversations with this type of chatbot can only follow predetermined paths. At each step in the conversation the user will need to pick from explicit options to determine the next step in the conversation.</p>
       </div>
 
-      <div class="page__container-item">
+      <div class="introduction-page__container-item">
         <img src="@/assets/img/introduction/how-section/illu-2.svg" alt="Illustration">
-        <h3>Intelligent chatbots</h3>
+        <h3 class="bold">Intelligent chatbots</h3>
         <p>Artificial intelligence allows them to be more flexible in terms of the user input they can accept. They can accept free form input in the form of text or voice statements.</p>
         <p>AI also allows them to improve the more that they are used. This bot continuously gets smarter as it learns from conversations it has with people.</p>
       </div>
     </div>
 
-    <div class="introduction-page__item-uses">
-      <h2>Uses of chatbot</h2>
-      <p>There are many uses for chatbots. Several different types of issues can be distinguished according to B2B or B2C positioning.</p>
+    <div class="introduction-page__container">
+      <div class="introduction-page__item">
+        <h2>Uses of chatbot</h2>
+        <p>There are many uses for chatbots. Several different types of issues can be distinguished according to B2B or B2C positioning.</p>
+        </div>
+      </div>
+
+      <div class="introduction-page__container introduction-page__item-uses">
+        <div>
+          <img src="@/assets/img/introduction/uses-section/learning.svg" alt="Illustration">
+          <h3>Bot Learning</h3>
+          <p>trains, coaches and accompanies students on an educational path</p>
+        </div>
+        <div>
+          <img src="@/assets/img/introduction/uses-section/news.svg" alt="Illustration">
+          <h3>News Bot</h3>
+          <p>Chatbot who tells you about the news</p>
+        </div>
+        <div>
+          <img src="@/assets/img/introduction/uses-section/assistant.svg" alt="Illustration">
+          <h3>Brand assistant Bot</h3>
+          <p>Customer support, relationship and after sales service</p>
+        </div>
+        <div>
+          <img src="@/assets/img/introduction/uses-section/e-commerce.svg" alt="Illustration">
+          <h3>E-commerce bot</h3>
+          <p>sell / advice / recommendations</p>
+        </div>
+        <div>
+          <img src="@/assets/img/introduction/uses-section/entertainment.svg" alt="Illustration">
+          <h3>Entertainment Bot</h3>
+          <p>outing ideas, exhibition, bar, restaurants</p>
+        </div>
+        <div>
+          <img src="@/assets/img/introduction/uses-section/fun.svg" alt="Illustration">
+          <h3>Fun Bot</h3>
+          <p>spent the time, live an experience</p>
+        </div>
+
+        <router-link :to="{ name: 'chatbot' }" class="start-navigation">
+          <img src="@/assets/img/introduction/uses-section/dialog.svg" alt="Illustration">
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -71,12 +111,67 @@ export default {
 
 <style lang="scss" scoped>
   .introduction-page {
-    overflow: scroll;
+    overflow-y: scroll;
     position: relative;
     display: inherit;
 
     .illu-1 {
       top: 14rem;
+    }
+
+    &__container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin: 0 auto;
+      margin-bottom: 4rem;
+      max-width: $container;
+      color: $black;
+
+      &:nth-of-type(4) {
+        margin-bottom: 0;
+      }
+
+      p {
+        margin-left: $content-margin;
+      }
+  
+      &-item {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        width: 47%;
+
+        p {
+          margin-left: inherit;
+        }
+
+        img {
+          margin: 0 auto;
+          width: 60%;
+        }
+
+        h3 {
+          position: absolute;
+          top: 7.5rem;
+          @include fontSize(20);
+        }
+
+        &:first-of-type {
+          h3 {
+            right: 0;
+          }
+        }
+
+        &:last-of-type {
+          h3 {
+            left: 0;
+          }
+        }
+      }
     }
 
     &__item {
@@ -103,37 +198,37 @@ export default {
           }
         }
       }
+
+      &-uses {
+        justify-content: center;
+
+        div, a {
+          margin-bottom: 3rem;
+          width: calc(100%/3);
+          text-align: center;
+
+          img {
+            width: 8rem;
+          }
+
+          h3 {
+            width: 100%;
+            text-align: center;
+          }
+
+          p {
+            margin-left: 0;
+          }
+        }
+        
+        .start-navigation {
+          margin-top: 4rem;
+        }
+      }
     }
   }
 
   .page__content {
     padding-top:  10rem;
-  }
-
-  .page__container {
-    color: $black;
-    &-item {
-      img {
-        margin: 0 auto;
-        width: 60%;
-      }
-
-      h3 {
-        position: absolute;
-        top: 6.8rem;
-      }
-
-      &:first-of-type {
-        h3 {
-          right: 0;
-        }
-      }
-
-      &:last-of-type {
-        h3 {
-          left: 0;
-        }
-      }
-    }
   }
 </style>

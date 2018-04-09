@@ -2,6 +2,15 @@ h2, h3 {
   text-align: left;
 }
 
+h2 {
+  color: black;
+  margin-bottom: 1.5rem;
+  @include fontSize(30);
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
 h3 {
   @include fontSize(16);
 }
@@ -10,6 +19,14 @@ p, a {
   @include fontSize(12)
 }
 
+a {
+  color: $black;
+}
+
 .bold {
   font-family: nexa-bold, sans-serif;
+}
+
+.white {
+  color: $white;
 }

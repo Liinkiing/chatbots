@@ -49,28 +49,6 @@ body {
     }
   }
 
-  &__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin: 0 auto;
-    width: $container;
-
-    &-item {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      flex-direction: column;
-      width: 47%;
-    }
-  }
-
-  &__small-container {
-    margin: 0 auto;
-    max-width: $small-container;
-  }
-
   &__title {
     z-index: 1;
     width: 100%;
@@ -110,14 +88,6 @@ body {
 
     &::-webkit-scrollbar-thumb {
       background-color: rgba(0, 0, 0, 0.22);
-    }
-    & h2 {
-      color: black;
-      margin-bottom: 1.5rem;
-      @include fontSize(30);
-      &:first-child {
-        margin-top: 0;
-      }
     }
     & p {
       color: black;
