@@ -1,14 +1,31 @@
 <template>
   <div id="app">
+    <div class="page__imgs">
+      <router-link :to="{ name: 'chatbot' }">
+        <img src="@/assets/img/general/chatbot.svg" alt="Chatbot">
+      </router-link>
+
+      <router-link :to="{ name: 'informations' }">
+        <img src="@/assets/img/general/infos.svg" alt="Chatbot">
+      </router-link>
+    </div>
+
     <transition :name="transitionName" mode="out-in">
       <router-view/>
     </transition>
+
+    <timeline-component/>
   </div>
 </template>
 
 <script>
+import TimelineComponent from '@/components/TimelineComponent'
+
 export default {
   name: 'App',
+  components: {
+    TimelineComponent
+  },
   data () {
     return {
       transitionName: 'slide-in',

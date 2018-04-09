@@ -57,7 +57,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   .page__content {
     height: 70vh;
     width: 80vw;
@@ -70,7 +70,7 @@ export default {
     position: absolute;
     width: 6rem;
     left: calc(50% - (6rem / 2));
-    bottom: 12vh;
+    bottom: 24vh;
     transform-origin: center;
     transition: all $transition-duration ease;
     cursor: pointer;
