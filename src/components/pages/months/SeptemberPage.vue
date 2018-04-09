@@ -6,7 +6,7 @@
         design service
         and is though to the long term
       </p>
-    <a class="page__source" href="http://www.angie.fr/chatbots-revolution-regression-matiere-dux/v">http://www.angie.fr/chatbots-revolution-regression-matiere-dux/v</a>
+    <a class="page__source" href="http://www.angie.fr/chatbots-revolution-regression-matiere-dux/v">En savoir plus</a>
   </page-component>
 </template>
 
