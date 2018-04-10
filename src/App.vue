@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="page__imgs">
-      <router-link :to="{ name: 'chatbot' }">
+      <router-link :to="{ name: 'chatbot' }" class="test">
         <img src="@/assets/img/general/chatbot.svg" alt="Chatbot">
       </router-link>
 
@@ -94,5 +94,4 @@ export default {
 </script>
 
 <style lang="scss">
-  @import "./assets/scss/ui/transitions/timeline";
 </style>

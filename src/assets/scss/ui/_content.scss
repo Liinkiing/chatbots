@@ -31,33 +31,6 @@ body {
     }
   }
 
-  & .content__fade {
-    position: relative;
-    z-index: 1;
-    pointer-events: none;
-    background-image: linear-gradient(to bottom, $main-color, transparentize($main-color, 1) 90%);
-    width: 100vw;
-    top: 43px;
-    height: 60px;
-    &:last-of-type {
-      background-image: linear-gradient(to bottom, transparentize($main-color, 1), $main-color 90%);
-      position: relative;
-      top: -43px;
-      @media screen and (min-height: 600px) {
-        top: -53px;
-      }
-      @media screen and (min-height: 782px) {
-        top: -59px;
-      }
-    }
-    @media screen and (min-height: 600px) {
-      top: 53px;
-    }
-    @media screen and (min-height: 782px) {
-      top: 59px;
-    }
-  }
-
   &__imgs {
     z-index: 10;
     position: absolute;
@@ -70,6 +43,11 @@ body {
 
     img {
       width: 4rem;
+      transition: all .3s ease;
+
+      &:hover {
+        filter: invert(100%);
+      }
     }
   }
 
@@ -79,9 +57,9 @@ body {
     transition: all $transition-duration ease;
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -40%);
     text-align: center;
     @include fontSize(100);
 
@@ -119,6 +97,33 @@ body {
     }
     & a.page__source {
       margin-left: $content-margin;
+    }
+  }
+
+  & .content__fade {
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
+    background-image: linear-gradient(to bottom, $main-color, transparentize($main-color, 1) 90%);
+    width: 100vw;
+    top: 43px;
+    height: 60px;
+    &:last-of-type {
+      background-image: linear-gradient(to bottom, transparentize($main-color, 1), $main-color 90%);
+      position: relative;
+      top: -43px;
+      @media screen and (min-height: 600px) {
+        top: -53px;
+      }
+      @media screen and (min-height: 782px) {
+        top: -59px;
+      }
+    }
+    @media screen and (min-height: 600px) {
+      top: 53px;
+    }
+    @media screen and (min-height: 782px) {
+      top: 59px;
     }
   }
 

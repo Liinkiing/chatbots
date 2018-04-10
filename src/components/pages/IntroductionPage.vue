@@ -114,6 +114,8 @@ export default {
     position: relative;
     display: inherit;
 
+    @include customScroolbar;
+
     .illu-1 {
       top: 14rem;
     }
@@ -216,7 +218,8 @@ export default {
           }
 
           p {
-            margin-left: 0;
+            margin: 0 auto;
+            max-width: 80%;
           }
         }
 

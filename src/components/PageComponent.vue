@@ -71,7 +71,7 @@ export default {
     position: absolute;
     width: 6rem;
     left: calc(50% - (6rem / 2));
-    bottom: 24vh;
+    bottom: 25vh;
     transform-origin: center;
     transition: all $transition-duration ease;
     cursor: pointer;
