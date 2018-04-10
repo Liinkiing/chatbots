@@ -1,27 +1,32 @@
 <template>
   <div id="app">
-    <div class="page__imgs">
-      <router-link :to="{ name: 'chatbot' }">
-        <img src="@/assets/img/general/chatbot.svg" alt="Chatbot">
-      </router-link>
+    <transition name="page-imgs">
+      <div class="page__imgs" :class="animate ? 'page__imgs-focus' : ''" v-if="isAllowed && !animate">
+        <router-link :to="{ name: 'chatbot' }" v-if="!forceShow">
+          <img src="@/assets/img/general/chatbot.svg" alt="Chatbot">
+        </router-link>
 
-      <router-link :to="{ name: 'informations' }">
-        <img src="@/assets/img/general/infos.svg" alt="Chatbot">
-      </router-link>
-    </div>
+        <router-link :to="{ name: 'informations' }">
+          <img src="@/assets/img/general/infos.svg" alt="Chatbot">
+        </router-link>
+      </div>
+    </transition>
 
     <transition :name="transitionName" mode="out-in">
       <router-view/>
     </transition>
 
     <transition name="timeline">
-      <timeline-component/>
+      <timeline-component v-if="isAllowed && !animate"/>
     </transition>
   </div>
 </template>
 
 <script>
 import TimelineComponent from '@/components/TimelineComponent'
+import {EventBus} from './main'
+
+const blacklist = ['home', 'introduction', 'chatbot']
 
 export default {
   name: 'App',
@@ -31,10 +36,13 @@ export default {
   data () {
     return {
       transitionName: 'slide-in',
-      direction: 1
+      direction: 1,
+      animate: null
     }
   },
   created () {
+    EventBus.$on('contentChanged', this.contentChanged.bind(this))
+
     window.addEventListener('keydown', (e) => {
       switch (e.keyCode) {
         case 37:
@@ -49,6 +57,11 @@ export default {
   watch: {
     '$route' (to, from) {
       this.transitionName = this.computeTransition(to, from)
+    }
+  },
+  computed: {
+    isAllowed () {
+      return !blacklist.includes(this.$route.name)
     }
   },
   methods: {
@@ -88,11 +101,10 @@ export default {
           this.$router.push(route)
         }
       }
+    },
+    contentChanged (animate) {
+      this.animate = animate
     }
   }
 }
 </script>
-
-<style lang="scss">
-  @import "./assets/scss/ui/transitions/timeline";
-</style>

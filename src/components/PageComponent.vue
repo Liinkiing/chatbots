@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import {EventBus} from '../main'
+
 export default {
   name: 'page-component',
   props: {
@@ -28,6 +30,14 @@ export default {
     return {
       animate: false,
       showContent: false
+    }
+  },
+  created () {
+    EventBus.$emit('contentChanged', this.animate)
+  },
+  watch: {
+    animate () {
+      EventBus.$emit('contentChanged', this.animate)
     }
   },
   computed: {
@@ -45,13 +55,13 @@ export default {
 
         setTimeout(() => {
           this.showContent = !this.showContent
-        }, 1000)
+        }, 800)
       } else {
         this.showContent = !this.showContent
 
         setTimeout(() => {
           this.animate = !this.animate
-        }, 1000)
+        }, 800)
       }
     }
   }
@@ -71,14 +81,14 @@ export default {
     position: absolute;
     width: 6rem;
     left: calc(50% - (6rem / 2));
-    bottom: 24vh;
+    bottom: 25vh;
     transform-origin: center;
     transition: all $transition-duration ease;
     cursor: pointer;
 
     &-focus {
       bottom: 6vh;
-      transform: rotate(180deg);
+      transform: rotate(180deg) scale(0.6);
     }
   }
 </style>

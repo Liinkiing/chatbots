@@ -1,0 +1,10 @@
+.page-imgs-enter-active {
+  transition: all .5s ease;
+}
+.page-imgs-leave-active {
+  transition: all .8s ease-out;
+}
+.page-imgs-enter, .page-imgs-leave-to {
+  opacity: 0;
+  top: 0;
+}

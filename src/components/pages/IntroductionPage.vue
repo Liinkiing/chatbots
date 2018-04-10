@@ -98,13 +98,8 @@
 </template>
 
 <script>
-import PageComponent from '@/components/PageComponent'
-
 export default {
-  name: 'introduction-page',
-  components: {
-    PageComponent
-  }
+  name: 'introduction-page'
 }
 </script>
 
@@ -113,6 +108,8 @@ export default {
     overflow-y: scroll;
     position: relative;
     display: inherit;
+
+    @include customScroolbar;
 
     .illu-1 {
       top: 14rem;
@@ -216,7 +213,8 @@ export default {
           }
 
           p {
-            margin-left: 0;
+            margin: 0 auto;
+            max-width: 80%;
           }
         }
 
