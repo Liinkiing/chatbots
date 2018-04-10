@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import {EventBus} from '../main'
+
 export default {
   name: 'page-component',
   props: {
@@ -28,6 +30,14 @@ export default {
     return {
       animate: false,
       showContent: false
+    }
+  },
+  created () {
+    EventBus.$emit('contentChanged', this.animate)
+  },
+  watch: {
+    animate () {
+      EventBus.$emit('contentChanged', this.animate)
     }
   },
   computed: {
@@ -78,7 +88,7 @@ export default {
 
     &-focus {
       bottom: 6vh;
-      transform: rotate(180deg);
+      transform: rotate(180deg) scale(0.6);
     }
   }
 </style>

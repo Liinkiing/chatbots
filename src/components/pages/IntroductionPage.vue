@@ -98,13 +98,8 @@
 </template>
 
 <script>
-import PageComponent from '@/components/PageComponent'
-
 export default {
-  name: 'introduction-page',
-  components: {
-    PageComponent
-  }
+  name: 'introduction-page'
 }
 </script>
 

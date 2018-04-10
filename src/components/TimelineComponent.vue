@@ -1,5 +1,5 @@
 <template>
-  <div class="timeline-component page__line" v-if="isAllowed">
+  <div class="timeline-component page__line">
       <ul>
           <li v-for="item in items" :key="item.id">
               <router-link :to="{ name: item.route }" class="timeline-component__link">
@@ -18,7 +18,6 @@
 </template>
 
 <script>
-const blacklist = ['home', 'introduction', 'chatbot']
 export default {
   name: 'timeline-component',
   data () {
@@ -59,11 +58,6 @@ export default {
       ]
     }
   },
-  computed: {
-    isAllowed () {
-      return !blacklist.includes(this.$route.name)
-    }
-  },
   methods: {
     isActive (routeName) {
       return this.$route.name === routeName
@@ -76,6 +70,11 @@ export default {
 </script>
 
 <style lang="scss">
+  body.chatbot .timeline-component__button {
+    background-color: $blue;
+    transition: all .8s ease;
+  }
+
   .timeline-component {
     position: absolute;
     left: 50%;
