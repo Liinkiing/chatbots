@@ -18,7 +18,7 @@
 </template>
 
 <script>
-const blacklist = ['home', 'introduction', 'chatbot'];
+const blacklist = ['home', 'introduction', 'chatbot']
 export default {
   name: 'timeline-component',
   data () {

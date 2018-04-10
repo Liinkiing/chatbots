@@ -45,13 +45,13 @@ export default {
 
         setTimeout(() => {
           this.showContent = !this.showContent
-        }, 1000)
+        }, 800)
       } else {
         this.showContent = !this.showContent
 
         setTimeout(() => {
           this.animate = !this.animate
-        }, 1000)
+        }, 800)
       }
     }
   }
