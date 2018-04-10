@@ -8,3 +8,8 @@
 
 @import "text/fonts";
 @import "text/text-styling";
+
+
+body.chatbot .page__content {
+  overflow: visible;
+}

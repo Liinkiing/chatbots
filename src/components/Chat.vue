@@ -3,6 +3,7 @@
     <ul class="chat-container" ref="chatContainer">
       <transition-group name="fade">
         <li class="message" v-for="message in messages" :key="message.id" :class="{'is-mine': message.isMine}">
+          <img class="bot-picture" src="../assets/img/general/bot_picture.svg" v-if="showBotPictureForMessage(message)"/>
           <p>
             {{ message.text }}
             <img :src="message.attachment.url" v-if="message.attachment.type === 'image'"/>
@@ -24,7 +25,7 @@
         </li>
       </transition-group>
     </ul>
-    <input type="text" class="message-input" @keyup.enter="sendMessage" v-model="newMessage"
+    <input ref="chatInput" @keyup.esc="$refs.chatInput.blur()" @focus="onFocus" @blur="onBlur" type="text" class="message-input" @keyup.enter="sendMessage" v-model="newMessage"
            placeholder="Entrez votre message...">
   </div>
 </template>
@@ -34,30 +35,38 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    border: 3px solid whitesmoke;
     color: whitesmoke;
     & .chat-container {
-      border: 2px solid whitesmoke;
-      margin: 0;
       list-style: none;
-      padding: 40px 20px;
       flex: 1;
       overflow-y: scroll;
-      overflow-x: hidden;
+      padding: 40px 20px 40px 250px;
+      margin: 0 0 0 -230px;
       @include customScroolbar();
       & li.message {
         padding: 20px;
-        border: 2px solid whitesmoke;
+        border: 3px solid whitesmoke;
         position: relative;
         z-index: 2;
         margin-bottom: 40px;
         width: max-content;
         max-width: 100%;
+        & .bot-picture {
+          position: absolute;
+          user-select: none;
+          width: 130px;
+          height: 130px;
+          top: -31px;
+          z-index: 2;
+          left: -200px;
+        }
         & .actions {
           & .action {
             &:first-of-type {
               padding-top: 10px;
               margin-top: 10px;
-              border-top: 2px solid whitesmoke;
+              border-top: 3px solid whitesmoke;
             }
             font-size: 1rem;
             text-decoration: underline;
@@ -88,7 +97,7 @@
         }
         &:before {
           top: calc(100% - 2px);
-          left: -15px;
+          left: -16px;
           transform: rotate(-45deg);
           z-index: 1;
           border-bottom-color: whitesmoke;
@@ -113,7 +122,7 @@
           }
           &:before {
             top: calc(100% - 2px);
-            right: -15px;
+            right: -16px;
             left: unset;
             transform: rotate(225deg) scaleY(-1);
             z-index: 1;
@@ -129,8 +138,8 @@
     }
     & .message-input {
       background: transparent;
-      border: 2px solid whitesmoke;
-      border-top: none;
+      border: none;
+      border-top: 3px solid whitesmoke;
       padding: 20px;
       outline: none;
       font-family: inherit;
@@ -145,6 +154,8 @@
 </style>
 
 <script>
+import { EventBus } from '../main'
+
 const axios = require('axios')
 
 export default {
@@ -177,7 +188,27 @@ export default {
       newMessage: null
     }
   },
+  computed: {
+    lastMessage () {
+      return this.messages[this.messages.length - 1]
+    }
+  },
   methods: {
+    nextMessageAfter (message) {
+      return this.messages[this.messages.indexOf(message) + 1] || null
+    },
+    showBotPictureForMessage (message) {
+      if (message !== this.lastMessage) {
+        return !message.isMine && this.nextMessageAfter(message).isMine
+      }
+      return !message.isMine
+    },
+    onFocus () {
+      EventBus.$emit('chat.focus')
+    },
+    onBlur () {
+      EventBus.$emit('chat.blur')
+    },
     callAPI (text, interactive = false, attachment = null, callback) {
       let data = new FormData()
       const postData = {

@@ -37,13 +37,21 @@ export default {
     return {
       transitionName: 'slide-in',
       direction: 1,
-      animate: null
+      animate: null,
+      canNavigateWithKeyboard: true
     }
   },
   created () {
     EventBus.$on('contentChanged', this.contentChanged.bind(this))
+    EventBus.$on('chat.focus', () => {
+      this.canNavigateWithKeyboard = false
+    })
+    EventBus.$on('chat.blur', () => {
+      this.canNavigateWithKeyboard = true
+    })
 
     window.addEventListener('keydown', (e) => {
+      if (!this.canNavigateWithKeyboard) return
       switch (e.keyCode) {
         case 37:
           this.prev()
