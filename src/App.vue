@@ -2,7 +2,7 @@
   <div id="app">
     <transition name="page-imgs">
       <div class="page__imgs" :class="animate ? 'page__imgs-focus' : ''" v-if="isAllowed && !animate">
-        <router-link :to="{ name: 'chatbot' }" v-if="!forceShow">
+        <router-link :to="{ name: 'chatbot' }">
           <img src="@/assets/img/general/chatbot.svg" alt="Chatbot">
         </router-link>
 
