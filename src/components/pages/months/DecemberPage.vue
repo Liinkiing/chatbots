@@ -7,7 +7,7 @@
     <p>During the beta period, these features were "used to create responses and more engaging experiences," the company said, meaning, among other things, customer service chatbots.</p>
     <p>Some of the companies that have already used these features to create their own chatbots over the last year include Samsung, MTV, TBS, Wendy’s, and Patrón.</p>
     <p>The other big piece of news is that Twitter is launching an enterprise version of the Account Activity API.</p>
-    <a class="page__source" href="http://vator.tv/news/2017-12-20-twitter-makes-it-easier-for-developers-to-build-chatbots-on-its-platform">Know more...</a>
+    <a class="page__source" href="http://vator.tv/news/2017-12-20-twitter-makes-it-easier-for-developers-to-build-chatbots-on-its-platform">Read more...</a>
 
     <h2>World's first mental health chatbot</h2>
     <p>For those suffering from anxiety or depression, taking the first step of speaking to someone about it can seem an impossible task.</p>
@@ -16,7 +16,7 @@
     <p>Woebot mostly uses questions, such as 'What is your energy like today?' or 'How are you feeling?', encouraging users to openly discuss their emotions.</p>
     <p>It can also be suggested that people are thinking about things in their lives. The doctors are available anywhere, and anywhere, offering accessible mental health care to those who need it.</p>
     <p>'Woebot' engages in 2 million conversations a week, but some experts have cited privacy fears as chatbot 'patients' are not protected by US confidentiality laws.</p>
-    <a class="page__source" href="http://www.dailymail.co.uk/sciencetech/article-5143015/Worlds-robot-therapist-2m-conversations-week.html">Know more...</a>
+    <a class="page__source" href="http://www.dailymail.co.uk/sciencetech/article-5143015/Worlds-robot-therapist-2m-conversations-week.html">Read more...</a>
 
     <h2>Meet Lego’s Facebook Messenger chatbot Ralph, a helpful alternative to bricks and mortar</h2>
     <p>Lego has embraced a Facebook Messenger chatbot to help engage fans and aid consumers with gift indecision in the run up to Christmas.</p>
@@ -25,13 +25,6 @@
     <p>This controlled environment has been designed where user inputs are limited, meaning that Ralph’s responses will be solely created to reduce friction from potential purchases on the social network. The tone is broken up with numerous Gifs of the bot in action.</p>
     <a class="page__source" href="https://www.messenger.com/login.php?next=https%3A%2F%2Fwww.messenger.com%2Ft%2FLEGO">Try the bot here</a>
 
-    <h2>Chatbot for the launch of the new Arte’s series</h2>
-    <p>The Franco-German channel challenges its fans to put themselves in the shoes of a complete stranger through his Facebook Messenger account.</p>
-    <p>To immerse future viewers in the universe of the series, ARTE has chosen the entertainment agency Dare.Win and its LiveBotter chatbots developers to create an original experience to meet the characters.</p>
-    <br>
-    <p>This operation aims to bring the experience of a transfer to life, simply by using a mobile phone. Thus, by sending a message on the Facebook page of ARTE, the subject will be transferred into the body of Sylvain Bernard, the protagonist of the series, and will have to take his place during conversations with his colleagues from the Action Brigade against Illegal transfer.</p>
-    <p>The goal is to answer the questions of the greatest profilers by claiming to be and always have been Sylvain Bernard. Through this experience of a few minutes, the user will navigate between three Messenger conversations and will have to make the right choices to gain access to the first episode of the series in preview.</p>
-    <a class="page__source" href="https://lareclame.fr/darewin-arte-transferts-188604">Know more...</a>
   </page-component>
 </template>
 

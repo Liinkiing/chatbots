@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <transition name="page-imgs">
-      <div class="page__imgs" :class="animate ? 'page__imgs-focus' : ''" v-if="isAllowed && !animate">
+      <div class="page__imgs" :class="animate ? 'page__imgs-focus' : ''" v-if="isAllowed">
         <router-link :to="{ name: 'chatbot' }">
           <img src="@/assets/img/general/chatbot.svg" alt="Chatbot">
         </router-link>
@@ -26,7 +26,7 @@
 import TimelineComponent from '@/components/TimelineComponent'
 import {EventBus} from './main'
 
-const blacklist = ['home', 'introduction', 'chatbot']
+const blacklist = ['home', 'introduction', 'chatbot', 'informations']
 
 export default {
   name: 'App',
@@ -111,6 +111,7 @@ export default {
       }
     },
     contentChanged (animate) {
+      console.log(animate)
       this.animate = animate
     }
   }

@@ -38,6 +38,7 @@ export default {
       transform: rotate(90deg);
       top: calc(50% - (6rem / 2));
       left: 40px;
+      z-index: 5;
       &:hover {
         cursor: pointer;
       }

@@ -34,8 +34,8 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    border: 3px solid whitesmoke;
-    color: whitesmoke;
+    border: 3px solid $white;
+    color: $white;
     & .chat-container {
       list-style: none;
       flex: 1;
@@ -44,7 +44,7 @@
       margin: 0 0 0 -230px;
       @include customScroolbar();
       & a {
-        color: whitesmoke;
+        color: $white;
         font-weight: bold;
         text-decoration: underline;
       }
@@ -53,7 +53,7 @@
       }
       & li.message {
         padding: 20px;
-        border: 3px solid whitesmoke;
+        border: 3px solid $white;
         position: relative;
         z-index: 2;
         margin-bottom: 40px;
@@ -73,14 +73,14 @@
             &:first-of-type {
               padding-top: 10px;
               margin-top: 10px;
-              border-top: 3px solid whitesmoke;
+              border-top: 3px solid $white;
             }
             font-size: 1rem;
             text-decoration: underline;
             transition: color 0.3s;
             &:hover {
               cursor: pointer;
-              color: transparentize(whitesmoke, 0.1)
+              color: transparentize($white, 0.1)
             }
           }
         }
@@ -107,7 +107,7 @@
           left: -16px;
           transform: rotate(-45deg);
           z-index: 1;
-          border-bottom-color: whitesmoke;
+          border-bottom-color: $white;
         }
         &.is-mine {
           margin-left: auto;
@@ -133,7 +133,7 @@
             left: unset;
             transform: rotate(225deg) scaleY(-1);
             z-index: 1;
-            border-bottom-color: whitesmoke;
+            border-bottom-color: $white;
           }
         }
         & p {
@@ -146,7 +146,7 @@
     & .message-input {
       background: transparent;
       border: none;
-      border-top: 3px solid whitesmoke;
+      border-top: 3px solid $white;
       padding: 20px;
       outline: none;
       font-family: inherit;
@@ -154,7 +154,7 @@
       color: inherit;
       &::placeholder {
         font-style: italic;
-        color: transparentize(whitesmoke, 0.2);
+        color: transparentize($white, 0.2);
       }
     }
   }

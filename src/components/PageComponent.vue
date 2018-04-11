@@ -80,7 +80,7 @@ export default {
   }
 
   .arrow {
-    z-index: 1;
+    z-index: 6;
     position: absolute;
     width: 6rem;
     left: calc(50% - (6rem / 2));

@@ -40,7 +40,6 @@ export default {
 <style lang="scss">
   .home-page {
     .page__title {
-      width: max-content;
       @media screen and (max-height: 800px) {
         font-size: 5rem;
         text-align: left;

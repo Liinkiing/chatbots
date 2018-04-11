@@ -14,16 +14,16 @@
 
     <p>In a near future, we could address those problems by using <strong>Machine Reading</strong>.</p>
     <p>The machine reading is the ability of a bot of understanding the context of a question in his own language, by using complex graph science. It will have a semantic representation of what the used asked, thus increasing his understanding a lot! When it will be ready, it will be a next major step in chatbots history!</p>
-    <a class="page__source" href="https://www.lesechos.fr/idees-debats/cercle/cercle-174336-lintelligence-des-chatbots-nest-elle-quartificielle-2118761.php">Know more...</a>
+    <a class="page__source" href="https://www.lesechos.fr/idees-debats/cercle/cercle-174336-lintelligence-des-chatbots-nest-elle-quartificielle-2118761.php">Read more...</a>
 
-    <h2>The place of chatbot in advertising</h2>
-    <p>Another great and original usage of chatbot is in the domain of advertising.</p>
-    <p>Arte tried it and nailed it! For their new series “Transferts”, Arte made a Chatbot in Facebook Messenger.</p>
-    <p>The chatbot is meant to dive in the user in the plot of their serie. It allows to break the 4th wall by putting directly the user in the serie. </p>
-    <p>During the conversation, we learn that our spirit was graft in another person body.</p>
-    <p>Thanks to the chatbot we can explore new unique ways of advertising, and we think that it’s a great idea and an original way of using chatbot.</p>
+    <h2>Chatbot for the launch of the new Arte’s series</h2>
+    <p>The Franco-German channel challenges its fans to put themselves in the shoes of a complete stranger through his Facebook Messenger account.</p>
+    <p>To immerse future viewers in the universe of the series, ARTE has chosen the entertainment agency Dare.Win and its LiveBotter chatbots developers to create an original experience to meet the characters.</p>
+    <br>
+    <p>This operation aims to bring the experience of a transfer to life, simply by using a mobile phone. Thus, by sending a message on the Facebook page of ARTE, the subject will be transferred into the body of Sylvain Bernard, the protagonist of the series, and will have to take his place during conversations with his colleagues from the Action Brigade against Illegal transfer.</p>
+    <p>The goal is to answer the questions of the greatest profilers by claiming to be and always have been Sylvain Bernard. Through this experience of a few minutes, the user will navigate between three Messenger conversations and will have to make the right choices to gain access to the first episode of the series in preview.</p>
+    <a class="page__source" href="https://lareclame.fr/darewin-arte-transferts-188604">Read more...</a>
 
-    <a class="page__source" href="https://www.20minutes.fr/serie/2170523-20171116-transferts-change-corps-grace-chatbot-arte">Know more...</a>
   </page-component>
 </template>
 

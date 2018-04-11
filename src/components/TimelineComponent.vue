@@ -79,6 +79,7 @@ export default {
     position: absolute;
     left: 50%;
     bottom: 7rem;
+    z-index: 3;
     transform: translateX(-50%);
 
     & a.timeline-component__link {
