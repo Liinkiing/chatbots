@@ -63,7 +63,7 @@ export default {
     width: 100%;
     transition: all $transition-duration ease;
     cursor: pointer;
-    @media screen and (max-height: 590px) {
+    @media screen and (max-height: 800px) {
       font-size: 5rem;
     }
     &-focus {
@@ -88,7 +88,7 @@ export default {
     transform-origin: center;
     transition: all $transition-duration ease;
     cursor: pointer;
-    @media screen and (max-height: 590px) {
+    @media screen and (max-height: 800px) {
       width: 3rem;
       left: calc(50% - (3rem / 2));
       bottom: 20vh;
