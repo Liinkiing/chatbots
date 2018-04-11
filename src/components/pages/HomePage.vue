@@ -2,7 +2,7 @@
   <div class="home-page page">
     <div class="page__title">
       <h1 class="bold">chatbots</h1>
-      <h2 class="white">technological watch from september 2017 to march 2018</h2>
+      <h2 class="white">technological watch from september 2017 to april 2018</h2>
     </div>
     <div class="page__navigation">
       <transition name="timeline" mode="out-in">
@@ -41,21 +41,29 @@ export default {
   .home-page {
     .page__title {
       width: max-content;
+      @media screen and (max-height: 800px) {
+        font-size: 5rem;
+        text-align: left;
+      }
     }
     .page__navigation {
       position: absolute;
-      bottom: 16%;
+      bottom: 8%;
       width: 400px;
       text-align: center;
+      @media screen and (max-height: 800px) {
+        bottom: 30px;
+      }
       & h3 {
         text-align: center;
+        font-size: 1.4rem;
       }
       &--buttons {
         display: flex;
         justify-content: space-evenly;
         .navigation__button {
-          height: 60px;
-          width: 60px;
+          height: 50px;
+          width: 50px;
           border: 4px $white solid;
           clear: both;
           padding: 10px;
