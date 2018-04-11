@@ -8,7 +8,7 @@
     <h2>Facebook stops the new apps that wish to join the social network</h2>
     <p>Resulting the Cambridge Analytica case, Facebook announced an action plan to stop the data leak of users.</p>
     <p>Facebook is actually reviewing its process of exam of news applications or chatbots. This break is critical to the industries that spent thousand of dollars for new applications that can be used or put online because of this decision. It reminds us that depending on only one platform is dangerous for the launch of a product.</p>
-    <a class="page__source" href="https://siecledigital.fr/2018/03/30/facebook-met-en-pause-les-nouvelles-applications-ou-chatbot-qui-souhaitent-rejoindre-le-reseau-social/">Know moore...</a>
+    <a class="page__source" href="https://siecledigital.fr/2018/03/30/facebook-met-en-pause-les-nouvelles-applications-ou-chatbot-qui-souhaitent-rejoindre-le-reseau-social/">Read more...</a>
 
     <h2>How can we communicate effectively with an A.I. ?</h2>
     <p>Because a great number of chatbot proved to be irrelevant or disappointing, Les Echos proposed a serie of rules to apply when you are chatting with a bot.</p>
