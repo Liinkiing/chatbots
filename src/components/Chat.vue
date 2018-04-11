@@ -25,7 +25,7 @@
       </transition-group>
     </ul>
     <input ref="chatInput" @keyup.esc="$refs.chatInput.blur()" @focus="onFocus" @blur="onBlur" type="text" class="message-input" @keyup.enter="sendMessage" v-model="newMessage"
-           placeholder="Entrez votre message...">
+           placeholder="Type your message...">
   </div>
 </template>
 
