@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <div class="page__title page__line" :class="className" @click="toggleContent()">
+    <div ref="pageTitle" class="page__title page__line" :class="className" @click="toggleContent()">
       <h1 class="bold">{{title}}</h1>
     </div>
 
@@ -28,11 +28,15 @@ export default {
   data () {
     return {
       animate: false,
-      showContent: false
+      showContent: false,
+      canToggleContent: true
     }
   },
   mounted () {
     EventBus.$emit('contentChanged', this.animate)
+    this.$refs.pageTitle.addEventListener('transitionend', () => {
+      this.canToggleContent = true
+    })
   },
   watch: {
     animate () {
@@ -49,6 +53,8 @@ export default {
   methods: {
     toggleContent () {
       if (this.forceShow) return
+      if (!this.canToggleContent) return
+      this.canToggleContent = false
       if (!this.animate) {
         this.animate = !this.animate
 
