@@ -111,7 +111,6 @@ export default {
       }
     },
     contentChanged (animate) {
-      console.log(animate)
       this.animate = animate
     }
   }

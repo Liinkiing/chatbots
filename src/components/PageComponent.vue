@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import { EventBus } from '../main'
+
 export default {
   name: 'page-component',
   props: {
@@ -27,6 +29,14 @@ export default {
     return {
       animate: false,
       showContent: false
+    }
+  },
+  mounted () {
+    EventBus.$emit('contentChanged', this.animate)
+  },
+  watch: {
+    animate () {
+      EventBus.$emit('contentChanged', this.animate)
     }
   },
   computed: {
