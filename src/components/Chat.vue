@@ -4,8 +4,7 @@
       <transition-group name="fade">
         <li class="message" v-for="message in messages" :key="message.id" :class="{'is-mine': message.isMine}">
           <img class="bot-picture" src="../assets/img/general/bot_picture.svg" v-if="showBotPictureForMessage(message)"/>
-          <p>
-            {{ message.text }}
+          <p v-html="message.text">
             <img :src="message.attachment.url" v-if="message.attachment.type === 'image'"/>
             <video controls height="160" v-if="message.attachment.type === 'video'" autoplay="">
               <source :src="message.attachment.url" type="video/mp4">
@@ -17,7 +16,7 @@
 
           <div class="actions" v-if="message.original.type === 'actions'">
             <div class="action" v-for="action in message.original.actions" :key="action.value"
-                 @click="performAction(action.value, message.original)">
+                 @click="performAction(action.value, message.original, action.text)">
               <img v-if="action.image_url" :src="action.image_url" style="max-height: 25px"/>
               {{ action.text }}
             </div>
@@ -44,6 +43,14 @@
       padding: 40px 20px 40px 250px;
       margin: 0 0 0 -230px;
       @include customScroolbar();
+      & a {
+        color: whitesmoke;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+      & em {
+        font-weight: bold;
+      }
       & li.message {
         padding: 20px;
         border: 3px solid whitesmoke;
@@ -174,11 +181,11 @@ export default {
         {
           'isMine': false,
           'user': '🤖',
-          'text': 'Salut ! Ici, tu peux parler avec moi si l\'envie te prends. Hésite pas à me dire coucou ! :)',
+          'text': 'Hi! Here, you can have a nice talk with me, don\'t be shy and say hi :)',
           'id': 'intro',
           'original': {
             'type': 'text',
-            'text': 'Salut ! Ici, tu peux parler avec moi si l\'envie te prends. Hésite pas à me dire coucou ! :)',
+            'text': 'Hi! Here, you can have a nice talk with me, don\'t be shy and say hi :)',
             'attachment': null,
             'additionalParameters': []
           },
@@ -209,7 +216,7 @@ export default {
     onBlur () {
       EventBus.$emit('chat.blur')
     },
-    callAPI (text, interactive = false, attachment = null, callback) {
+    callAPI (text, interactive = false, attachment = null, callback, actionLabel = null) {
       let data = new FormData()
       const postData = {
         driver: 'web',
@@ -222,6 +229,9 @@ export default {
 
       Object.keys(postData).forEach(key => data.append(key, postData[key]))
       axios.post(this.apiEndpoint, data).then(response => {
+        if (actionLabel) {
+          this._addMessage(actionLabel, null, true, {})
+        }
         const messages = response.data.messages || []
         messages.forEach(msg => {
           this._addMessage(msg.text, msg.attachment, false, msg)
@@ -232,10 +242,10 @@ export default {
       })
     },
 
-    performAction (value, message) {
+    performAction (value, message, actionLabel) {
       this.callAPI(value, true, null, (response) => {
         message.actions = null
-      })
+      }, actionLabel)
     },
 
     _addMessage (text, attachment, isMine, original = {}) {
@@ -253,6 +263,8 @@ export default {
     },
 
     sendMessage () {
+      this.newMessage = this.newMessage.trim()
+      if (this.newMessage === '') return
       let messageText = this.newMessage
       this.newMessage = ''
       if (messageText === 'clear') {
