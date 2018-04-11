@@ -3,7 +3,7 @@
     <h2>A chatbot that helps you contest your fines</h2>
     <p>DoNotPay, Winlt, TurboAppeal are chatbot that help you to contest your fines. Their function are really simple.</p>
     <p>A serie of question regarding your infraction is asked, and a letter-type is sent to the administration as a ground of appeal. These disputes represent 13 millions of dollars lost to the administrations.</p>
-    <a class="page__source" href="http://www.ladn.eu/tech-a-suivre/habitat-et-villes-connectes/stationnement-un-robot-fait-sauter-les-amendes/">Know moore...</a>
+    <a class="page__source" href="http://www.ladn.eu/tech-a-suivre/habitat-et-villes-connectes/stationnement-un-robot-fait-sauter-les-amendes/">Read more...</a>
 
     <h2>Facebook stops the new apps that wish to join the social network</h2>
     <p>Resulting the Cambridge Analytica case, Facebook announced an action plan to stop the data leak of users.</p>
