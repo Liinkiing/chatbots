@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HomePage from '@/components/pages/HomePage'
+import InformationsPage from '@/components/pages/InformationsPage'
 import IntroductionPage from '@/components/pages/IntroductionPage'
 import SeptemberPage from '@/components/pages/months/SeptemberPage'
 import OctoberPage from '@/components/pages/months/OctoberPage'
@@ -25,6 +26,11 @@ export default new Router({
         date: new Date('2017-07-01')
       },
       component: HomePage
+    },
+    {
+      path: '/informations',
+      name: 'informations',
+      component: InformationsPage
     },
     {
       path: '/introduction',

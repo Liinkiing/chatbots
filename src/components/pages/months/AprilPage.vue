@@ -13,7 +13,7 @@
     <h2>How can we communicate effectively with an A.I. ?</h2>
     <p>Because a great number of chatbot proved to be irrelevant or disappointing, Les Echos proposed a serie of rules to apply when you are chatting with a bot.</p>
     <p>It advises you to write correctly, to avoid sarcasm or irony, old fashioned expressions… It is also proposed to talk to the bot the same way you’ll talk with a child, that way it can learn and get better.</p>
-    <a class="page__source" href="https://www.lesechos.fr/idees-debats/cercle/cercle-181248-comment-bien-communiquer-avec-une-intelligence-artificielle-2166687.php#iErVG3ujucvqrwYB.99">Know moore...</a>
+    <a class="page__source" href="https://www.lesechos.fr/idees-debats/cercle/cercle-181248-comment-bien-communiquer-avec-une-intelligence-artificielle-2166687.php#iErVG3ujucvqrwYB.99">Read more...</a>
   </page-component>
 </template>
 

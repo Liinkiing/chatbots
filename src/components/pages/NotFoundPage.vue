@@ -2,7 +2,7 @@
   <div class="not-found-page page">
     <div class="page__title">
       <h1 class="bold">404</h1>
-      <h2>not found</h2>
+      <h2 class="white">not found</h2>
     </div>
   </div>
 </template>
