@@ -59,7 +59,7 @@ export default {
 
 <style lang="scss" scoped>
   .page__title {
-    z-index: 1;
+    z-index: 3;
     width: 100%;
     transition: all $transition-duration ease;
     cursor: pointer;
@@ -88,15 +88,18 @@ export default {
     transform-origin: center;
     transition: all $transition-duration ease;
     cursor: pointer;
-    @media screen and (max-height: 800px) {
+    @media screen and (max-height: 1000px) {
       width: 3rem;
       left: calc(50% - (3rem / 2));
-      bottom: 20vh;
+      bottom: 16vh;
     }
 
     &-focus {
-      bottom: 6vh;
+      bottom: 9vh;
       transform: rotate(180deg);
+      @media screen and (max-height: 1000px) {
+        bottom: 95px;
+      }
     }
   }
 </style>
