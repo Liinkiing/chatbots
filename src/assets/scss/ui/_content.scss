@@ -107,6 +107,17 @@ img {
     }
     & a.page__source {
       margin-left: $content-margin;
+      font-family: 'nexa-bold', sans-serif;
+    }
+    & ol {
+      margin: 0 0 0 $content-margin;
+      padding: 0 0 0 1.2rem;
+      @include fontSize(12);
+    }
+    & iframe {
+      margin-left: $content-margin;
+      width: calc(100% - #{$content-margin});
+      height: 22.8rem;
     }
   }
 
