@@ -168,7 +168,7 @@ const axios = require('axios')
 export default {
   props: {
     apiEndpoint: {
-      default: 'http://localhost:8000/botman'
+      default: process.env.SERVER_URL
     },
     userId: {
       default: +(new Date())
