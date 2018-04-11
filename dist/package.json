@@ -1,0 +1,11 @@
+{
+	"name": "veille-chatbot",
+	"version": "1.0.0",
+	"description": "Veille chatbot",
+	"author": "Omar Jbara <omar.jbara2@gmail.com>",
+	"private": false,
+	"scripts": {
+		"postinstall": "npm install express && npm install connect-history-api-fallback",
+		"start": "node server.js"
+	}
+}

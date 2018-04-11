@@ -1,6 +1,6 @@
 <template>
-  <div class="page" :class="$router.currentRoute.name">
-    <div ref="pageTitle" class="page__title page__line" :class="className" @click="toggleContent()">
+  <div class="page">
+    <div class="page__title page__line" :class="className" @click="toggleContent()">
       <h1 class="bold">{{title}}</h1>
     </div>
 
@@ -17,35 +17,16 @@
 </template>
 
 <script>
-import {EventBus} from '../main'
-
 export default {
   name: 'page-component',
   props: {
     title: {type: String, required: true},
-    forceShow: {type: Boolean, required: false, default: false},
-    showFaders: {type: Boolean, required: false, default: true}
+    forceShow: {type: Boolean, required: false, default: false}
   },
   data () {
     return {
       animate: false,
-      showContent: false,
-      canToggleContent: true
-    }
-  },
-  created () {
-    EventBus.$emit('contentChanged', this.animate)
-  },
-  mounted () {
-    this.$refs.pageTitle.addEventListener('transitionend', () => {
-      this.canToggleContent = true
-    })
-  },
-  beforeDestroy () {
-  },
-  watch: {
-    animate () {
-      EventBus.$emit('contentChanged', this.animate)
+      showContent: false
     }
   },
   computed: {
@@ -57,20 +38,19 @@ export default {
   },
   methods: {
     toggleContent () {
-      if (!this.canToggleContent || this.forceShow) return
-      this.canToggleContent = false
+      if (this.forceShow) return
       if (!this.animate) {
         this.animate = !this.animate
 
         setTimeout(() => {
           this.showContent = !this.showContent
-        }, 800)
+        }, 1000)
       } else {
         this.showContent = !this.showContent
 
         setTimeout(() => {
           this.animate = !this.animate
-        }, 800)
+        }, 1000)
       }
     }
   }
@@ -78,6 +58,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .page__title {
+    z-index: 1;
+    width: 100%;
+    transition: all $transition-duration ease;
+    cursor: pointer;
+
+    &-focus {
+      top: 4rem;
+      @include fontSize(40);
+    }
+  }
+
   .page__content {
     height: 70vh;
     width: 80vw;
@@ -90,14 +82,14 @@ export default {
     position: absolute;
     width: 6rem;
     left: calc(50% - (6rem / 2));
-    bottom: 25vh;
+    bottom: 12vh;
     transform-origin: center;
     transition: all $transition-duration ease;
     cursor: pointer;
 
     &-focus {
       bottom: 6vh;
-      transform: rotate(180deg) scale(0.6);
+      transform: rotate(180deg);
     }
   }
 </style>
