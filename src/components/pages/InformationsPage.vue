@@ -3,6 +3,9 @@
     <transition name="page-imgs">
       <div class="page__imgs">
         <img class="close-icon" src="@/assets/img/general/close.svg" alt="Chatbot" @click="close">
+        <a href="../../../static/files/veille_chatbot_2017-2018.pdf" target="_blank">
+          <img class="printer-icon" src="@/assets/img/general/imprimante.svg" alt="Printer">
+        </a>
       </div>
     </transition>
     <h1>about</h1>
@@ -26,7 +29,6 @@
 
 <script>
 import dataSources from '../../data/sitographie'
-
 export default {
   name: 'informations-page',
   data () {
@@ -73,9 +75,30 @@ export default {
     justify-content: flex-start;
     overflow-y: scroll;
     padding-top: 0;
+    @media print {
+      overflow: visible;
+    }
+    & .page__imgs {
+      flex-direction: row-reverse;
+      & a {
+        height: 4rem;
+      }
+      & img {
+        width: 4rem;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      @media print {
+        display: none;
+      }
+    }
     @include customScroolbar();
     & .page__sources {
       margin-top: 160px;
+      @media print {
+        margin-top: 0;
+      }
     }
     & .page__about {
       color: $black;
@@ -92,6 +115,9 @@ export default {
       text-align: center;
       padding: 40px;
       background: $main-color;
+      @media print {
+        display: none;
+      }
       &:after {
         content: '';
         position: absolute;
@@ -129,12 +155,6 @@ export default {
           font-size: 1rem;
           color: transparentize($black, 0.3);
         }
-      }
-    }
-    & .close-icon {
-      margin-left: auto;
-      &:hover {
-        cursor: pointer;
       }
     }
   }
