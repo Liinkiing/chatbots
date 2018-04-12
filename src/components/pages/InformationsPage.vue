@@ -5,7 +5,7 @@
         <img class="close-icon" src="@/assets/img/general/close.svg" alt="Chatbot" @click="close">
       </div>
     </transition>
-    <h1>sitographie</h1>
+    <h1>about</h1>
     <div class="page__sources">
       <ul v-for="month in Object.keys(sources)" :key="month">{{ month }}
         <li v-for="article in sources[month]" :key="article.source">
@@ -17,6 +17,9 @@
           </div>
         </li>
       </ul>
+      <div class="page__about">
+        <p>Made by LETUE Erwann, LAPLACE Sophie, JOUVET Martin & JBARA Omar</p>
+      </div>
     </div>
   </div>
 </template>
@@ -74,6 +77,12 @@ export default {
     & .page__sources {
       margin-top: 160px;
     }
+    & .page__about {
+      color: $black;
+      width: 100%;
+      padding-left: 40px;
+      margin-top: 70px;
+    }
     & h1 {
       font-size: 4rem;
       margin-top: 0;
@@ -104,12 +113,14 @@ export default {
       animation-fill-mode: forwards;
       font-size: 1.7rem;
       font-weight: bold;
+      font-family: 'nexa-bold', sans-serif;
       @for $i from 1 to 9 {
         &:nth-child(#{$i}) {
           animation-delay: $i * 0.25s;
         }
       }
       & li {
+        font-family: 'nexa-light', sans-serif;
         list-style: none;
         font-size: 1.3rem;
         margin: 20px 40px;
