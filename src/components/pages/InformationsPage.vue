@@ -101,10 +101,16 @@ export default {
       }
     }
     & .page__about {
+      filter: blur(10px);
+      opacity: 0;
+      transform: translateX(-40px);
       color: $black;
       width: 100%;
       padding-left: 40px;
       margin-top: 70px;
+      animation: fadeLeft 1s;
+      animation-fill-mode: forwards;
+      animation-delay: 2.5s;
     }
     & h1 {
       font-size: 4rem;
