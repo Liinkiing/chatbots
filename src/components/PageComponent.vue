@@ -88,13 +88,6 @@ export default {
     }
   }
 
-  .page__content {
-    height: 70vh;
-    width: 80vw;
-    max-width: 840px;
-    padding: $page-padding;
-  }
-
   .arrow {
     z-index: 6;
     position: absolute;

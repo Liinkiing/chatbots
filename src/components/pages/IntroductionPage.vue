@@ -4,8 +4,6 @@
       <h1 class="bold">chatbot</h1>
     </div>
 
-    <img class="img-illu illu-1" src="@/assets/img/introduction/page/illu-1.svg" alt="Robot">
-
     <div class="page__content">
       <div class="introduction-page__item">
         <h2>What is a chatbot?</h2>
