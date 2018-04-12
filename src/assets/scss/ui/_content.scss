@@ -106,6 +106,8 @@ img {
       margin-left: $content-margin;
     }
     & a.page__source {
+      display: block;
+      margin-top: 1rem;
       margin-left: $content-margin;
       font-family: 'nexa-bold', sans-serif;
     }
