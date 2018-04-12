@@ -33,7 +33,7 @@
   .chat {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 65vh;
     border: 3px solid $white;
     color: $white;
     & .chat-container {

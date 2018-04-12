@@ -1,13 +1,16 @@
 <template>
   <page-component :title="'chatbot'" :force-show="true" :show-faders="false">
-    <img  src="../../assets/img/general/arrow.svg" class="arrow navigation-back" alt="Arrow" @click="navigateBack">
-    <chat/>
+    <img src="../../assets/img/general/arrow.svg" class="arrow navigation-back" alt="Arrow" @click="navigateBack">
+    <div class="page__article">
+      <chat/>
+    </div>
   </page-component>
 </template>
 
 <script>
 import PageComponent from '../PageComponent'
 import Chat from '../Chat'
+
 export default {
   name: 'chatbot-page',
   components: {
