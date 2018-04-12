@@ -4,6 +4,7 @@
       <h1 class="bold">chatbot</h1>
     </div>
 
+    <div class="content__fade"></div>
     <div class="page__content">
       <div class="introduction-page__item">
         <h2>What is a chatbot?</h2>
@@ -31,28 +32,27 @@
         <h2>How do Chatbots work?</h2>
         <p>There are two types of chatbots Rule based bots and AI bots.</p>
       </div>
-    </div>
 
-    <div class="introduction-page__container">
-      <div class="introduction-page__container-item">
-        <img src="@/assets/img/introduction/how-section/illu-1.svg" alt="Illustration">
-        <h3 class="bold">Scripted chatbots</h3>
-        <p>Conversations with this type of chatbot can only follow predetermined paths. At each step in the conversation the user will need to pick from explicit options to determine the next step in the conversation.</p>
-        <p>Conversations with this type of chatbot can only follow predetermined paths. At each step in the conversation the user will need to pick from explicit options to determine the next step in the conversation.</p>
+      <div class="introduction-page__container">
+        <div class="introduction-page__container-item">
+          <img src="@/assets/img/introduction/how-section/illu-1.svg" alt="Illustration">
+          <h3 class="bold">Scripted chatbots</h3>
+          <p>Conversations with this type of chatbot can only follow predetermined paths. At each step in the conversation the user will need to pick from explicit options to determine the next step in the conversation.</p>
+          <p>Conversations with this type of chatbot can only follow predetermined paths. At each step in the conversation the user will need to pick from explicit options to determine the next step in the conversation.</p>
+        </div>
+
+        <div class="introduction-page__container-item">
+          <img src="@/assets/img/introduction/how-section/illu-2.svg" alt="Illustration">
+          <h3 class="bold">Intelligent chatbots</h3>
+          <p>Artificial intelligence allows them to be more flexible in terms of the user input they can accept. They can accept free form input in the form of text or voice statements.</p>
+          <p>AI also allows them to improve the more that they are used. This bot continuously gets smarter as it learns from conversations it has with people.</p>
+        </div>
       </div>
 
-      <div class="introduction-page__container-item">
-        <img src="@/assets/img/introduction/how-section/illu-2.svg" alt="Illustration">
-        <h3 class="bold">Intelligent chatbots</h3>
-        <p>Artificial intelligence allows them to be more flexible in terms of the user input they can accept. They can accept free form input in the form of text or voice statements.</p>
-        <p>AI also allows them to improve the more that they are used. This bot continuously gets smarter as it learns from conversations it has with people.</p>
-      </div>
-    </div>
-
-    <div class="introduction-page__container">
-      <div class="introduction-page__item">
-        <h2>Uses of chatbot</h2>
-        <p>There are many uses for chatbots. Several different types of issues can be distinguished according to B2B or B2C positioning.</p>
+      <div class="introduction-page__container">
+        <div class="introduction-page__item">
+          <h2>Uses of chatbot</h2>
+          <p>There are many uses for chatbots. Several different types of issues can be distinguished according to B2B or B2C positioning.</p>
         </div>
       </div>
 
@@ -93,6 +93,8 @@
         </router-link>
       </div>
     </div>
+    <div class="content__fade"></div>
+    </div>
 </template>
 
 <script>
@@ -103,8 +105,8 @@ export default {
 
 <style lang="scss" scoped>
   .introduction-page {
-    overflow-y: scroll;
     position: relative;
+    padding: 0;
     display: inherit;
     & .page__title {
       width: 100%;
@@ -114,6 +116,23 @@ export default {
 
     .illu-1 {
       top: 14rem;
+    }
+
+    .content__fade {
+      top: 13.5rem;
+
+      &:last-of-type {
+        bottom: 13rem;
+      }
+    }
+
+    .page__content {
+      position: relative;
+      margin-top: 10rem;
+      padding: 0;
+      padding-top: $page-padding;
+      width: 100%;
+      height: 78vh;
     }
 
     &__container {

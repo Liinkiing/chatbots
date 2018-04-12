@@ -2,7 +2,7 @@
   <div class="home-page page">
     <div class="page__title">
       <h1 class="bold">chatbots</h1>
-      <h2 class="white">technological watch from september 2017 to april 2018</h2>
+      <h2 class="white thin">technological watch from september 2017 to april 2018</h2>
     </div>
     <div class="page__navigation">
       <transition name="timeline" mode="out-in">
