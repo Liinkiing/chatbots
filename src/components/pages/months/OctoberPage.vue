@@ -3,7 +3,7 @@
     <div class="page__article">
       <img class="img-illu img-illu-left img-illu-smaller" src="@/assets/img/illus/october/oct_4-left.svg" alt="Illustration">
       <img class="img-illu img-illu-right img-illu-bigger" src="@/assets/img/illus/october/oct_4-right.svg" alt="Illustration">
-      <h2>Chatbot: stop or again?</h2>
+      <h2>Chatbot: for or against?</h2>
       <p>Chatbots are multiplying in companies, who are still groping to test this solution.</p>
       <p>Be careful. Designing a self-learning chatbot and letting it generate text is possible but can be dangerous for a brand. Microsoft has paid the price: he had to muzzle his bot that poured racist remarks influenced by malicious Internet users.</p>
       <p>Another important point: find the relevant location of the bot. Meetic installs it on his website to assist the customer. Direct Energie and Air France prefer to go through Messenger. In any case, companies should never lose sight of the fact that a bot is a tool, not a strategy.</p>
