@@ -14,10 +14,21 @@ export default {
     Chat,
     PageComponent
   },
+  data () {
+    return {
+      previousPath: '/'
+    }
+  },
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      vm.previousPath = from.path
+    })
+    next()
+  },
   methods: {
     navigateBack () {
       this.$router.push({
-        name: 'april'
+        path: this.previousPath
       })
     }
   },

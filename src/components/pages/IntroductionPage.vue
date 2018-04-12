@@ -108,6 +108,9 @@ export default {
     overflow-y: scroll;
     position: relative;
     display: inherit;
+    & .page__title {
+      width: 100%;
+    }
 
     @include customScroolbar;
 
