@@ -98,23 +98,23 @@ export default {
   .arrow {
     z-index: 6;
     position: absolute;
-    width: 6rem;
-    left: calc(50% - (6rem / 2));
-    bottom: 12vh;
+    width: 10rem;
+    left: calc(50% - (10rem / 2));
+    bottom: 22vh;
     transform-origin: center;
     transition: all $transition-duration ease;
     cursor: pointer;
     @media screen and (max-height: 1000px) {
-      width: 3rem;
-      left: calc(50% - (3rem / 2));
-      bottom: 16vh;
+      width: 6rem;
+      left: calc(50% - (6rem / 2));
+      bottom: 18vh;
     }
 
     &-focus {
-      bottom: 9vh;
-      transform: rotate(180deg);
+      bottom: 4vh;
+      transform: rotate(180deg) scale(0.5);
       @media screen and (max-height: 1000px) {
-        bottom: 95px;
+        bottom: 3rem;
       }
     }
   }
