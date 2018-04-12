@@ -76,11 +76,18 @@ export default {
   }
 
   .timeline-component {
+    z-index: 3;
     position: absolute;
     left: 50%;
-    bottom: 7rem;
-    z-index: 3;
+    bottom: 4rem;
     transform: translateX(-50%);
+    height: 5.5rem;
+    transition: all .3s ease;
+    opacity: .5;
+
+    &:hover {
+      opacity: 1;
+    }
 
     & a.timeline-component__link {
       &:hover {
@@ -125,7 +132,7 @@ export default {
     &.page__line {
       &::before {
         width: 100%;
-        margin-top: 3.2rem;
+        margin-top: 1.55rem;
       }
     }
 
