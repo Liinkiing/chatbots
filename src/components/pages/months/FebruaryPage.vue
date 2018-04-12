@@ -20,6 +20,12 @@
     <p>A young English man developed a virtual and totally free avocado for varied juridical procedure.</p>
     <p>This was originally created by “Joshua Browder” to contest many of the contraventions that he has to paid.</p>
     <a class="page__source" href="http://mashable.france24.com/tech-business/20180220-robot-avocat-algorithme-contraventions-justice-chatbot">Read more...</a>
+
+    <h2>Lidl launches online chatbot that recommends wine</h2>
+    <p>Lidl has launched a quirky new tool in an attempt to improve its interaction with customers, and make the relationship more personal.</p>
+    <p>Shoppers at home or in store can log in to Facebook Messenger and use a new chatbot that will help them select the best Lidl wine based on their budget or the meal they're having that evening.</p>
+    <p>The artificially intelligent chatbot – named Margot – can converse with customers who want to "make more confident wine choices and have some fun along the way", Lidl says. The discount supermarket said the chatbot would answer questions such as “which red wines from Chile under £6 do you sell?”, “what goes well with grilled salmon?”, or “what makes a wine sweet?”.</p>
+    <a class="page__source" href="https://www.facebook.com/messages/t/lidluk">Try it</a>
   </page-component>
 </template>
 
